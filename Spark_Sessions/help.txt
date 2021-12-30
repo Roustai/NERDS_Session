@@ -1,0 +1,15 @@
+In general the best way to quickly run Spark (on windows) is through a docker container.
+
+To do this you will need to download the Dockerfile here and do the following steps.
+
+In the folder with the Dockerfile, run the command
+
+    ---  docker build -t nerds_spark .  ---
+
+This will build the needed Docker image for the spark session, after that run a command SIMMILAR to the following
+
+    --- docker run --rm -p 4040:4040 -p 8888:8888 -v C:\Users\alexr\OneDrive\Documents\GitHub\NERDS_Session\Spark_Sessions:/home/jovyan/work nerds_spark ---
+
+-rm will remove the container once done
+-p will link up the ports (for Spark we use the 4040 and 8888 ports)
+-v will mount your folder onto the system, all changes made will persist through
